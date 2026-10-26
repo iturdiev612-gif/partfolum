@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .dark body { background-color: #0f172a; color: #e2e8f0; }
+        .dark .bg-white { background-color: #1e293b !important; }
+        .dark .bg-slate-50 { background-color: #0f172a !important; }
+        .dark .text-slate-800, .dark .text-slate-900 { color: #e2e8f0 !important; }
+        .dark .text-slate-600 { color: #cbd5e1 !important; }
+        .dark .border-slate-200 { border-color: #334155 !important; }
+        .dark .border-slate-300 { border-color: #475569 !important; }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.75);
+        }
+    </style>
+</head>
+
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 glass border-b border-slate-200/60 dark:border-slate-800/60 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex flex-col">
+                <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Islam Turdiev</span>
+                <span class="text-[10px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase">Junior Front-end Developer</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions (Theme Toggle + Mobile Menu Button) -->
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" class="p-2 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-lg hidden dark:block"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-md shadow-blue-500/20">
+                    <i class="fa-regular fa-paper-plane"></i> Hire Me
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 px-4 py-3 space-y-2 bg-slate-50 dark:bg-slate-900">
+            <a href="#about" class="block py-2 text-sm font-medium hover:text-blue-600">About</a>
+            <a href="#skills" class="block py-2 text-sm font-medium hover:text-blue-600">Skills</a>
+            <a href="#projects" class="block py-2 text-sm font-medium hover:text-blue-600">Projects</a>
+            <a href="#contact" class="block py-2 text-sm font-medium hover:text-blue-600">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- HERO SECTION -->
+        <section id="about" class="py-16 md:py-24 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+            <!-- Hero Text Content -->
+            <div class="flex-1 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Available for Opportunities
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Hi, I'm <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Islam Turdiev</span>
+                </h1>
+                
+                <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+                    Junior Front-end Developer based in <span class="font-semibold text-slate-800 dark:text-slate-100">Bishkek, Kyrgyzstan</span>. 
+                    I build responsive, modern web interfaces with a focus on clean code, performance, and user-friendly design.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#contact" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> Contact Me
+                    </a>
+                    <a href="#projects" class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-400 font-semibold text-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group"></i> View Projects
+                    </a>
+                </div>
+
+                <!-- Quick Metadata Badges -->
+                <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-center lg:justify-start gap-6 text-xs text-slate-500 dark:text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-blue-500"></i> Bishkek, Kyrgyzstan
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-brands fa-github text-slate-800 dark:text-slate-200"></i> github.com/iturdiev612-gif
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avatar Container -->
+            <div class="relative flex-shrink-0">
+                <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 blur-xl opacity-30 dark:opacity-40 animate-pulse"></div>
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
+                    <img src="./img/WhatsApp Image 2026-10-24 at 20.05.04.jpeg" 
+                        alt="Islam Turdiev Profile" 
+                        class="w-full h-full object-cover object-top rounded-full"
+                        onerror="this.src='https://placehold.co/400x400/2563eb/ffffff?text=IT'">
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-12 border-t border-slate-200 dark:border-slate-800">
+            <div class="text-center md:text-left mb-8">
+                <h2 class="text-2xl font-bold tracking-tight">Skills & Tech Stack</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Tools and technologies I use to build projects</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                <!-- HTML5 -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-orange-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-html5 text-3xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">HTML5</span>
+                </div>
+                <!-- CSS3 -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-blue-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-css3-alt text-3xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">CSS3</span>
+                </div>
+                <!-- JavaScript -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-yellow-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-js text-3xl text-yellow-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">JavaScript</span>
+                </div>
+                <!-- React Basic -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-cyan-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-react text-3xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">React Basic</span>
+                </div>
+                <!-- GitHub -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-purple-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-github text-3xl text-slate-800 dark:text-slate-200 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">GitHub</span>
+                </div>
+                <!-- Figma -->
+                <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center gap-2 hover:border-pink-500/50 hover:shadow-lg transition-all group">
+                    <i class="fa-brands fa-figma text-3xl text-pink-500 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold">Figma</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-16 border-t border-slate-200 dark:border-slate-800">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight">Featured Projects</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Check out some of my recent work and deployments</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Japan Project Card -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-tr from-rose-500 via-purple-600 to-indigo-700 relative p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">Live Project</span>
+                            <a href="https://japan-project-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-slate-100 transition-colors">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </div>
+                        <div>
+                            <span class="text-xs font-medium text-rose-200 uppercase tracking-widest">Web Application</span>
+                            <h3 class="text-2xl font-bold">Japan Project</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            An interactive web project showcasing Japanese culture and web components built with responsive layout practices and modern CSS styling.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">HTML5</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">CSS3</span>
+                                <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">JavaScript</span>
+                            </div>
+
+                            <a href="https://japan-project-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl border border-blue-600/30 text-blue-600 dark:text-blue-400 font-semibold text-xs flex items-center justify-center gap-2 hover:bg-blue-600 hover:text-white transition-all">
+                                <i class="fa-solid fa-globe"></i> Visit Japan Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Placeholder Project 2 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-tr from-blue-600 to-cyan-500 relative p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">Front-end UI</span>
+                            <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center"><i class="fa-solid fa-code text-xs"></i></span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-medium text-cyan-200 uppercase tracking-widest">Portfolio & Dashboard</span>
+                            <h3 class="text-2xl font-bold">Responsive Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            A clean and adaptable web interface built with React basics, flexible grids, and Tailwind utilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">React</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Placeholder Project 3 -->
+                <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-tr from-emerald-600 to-teal-500 relative p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold">UI Concept</span>
+                            <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center"><i class="fa-solid fa-mobile-screen text-xs"></i></span>
+                        </div>
+                        <div>
+                            <span class="text-xs font-medium text-emerald-200 uppercase tracking-widest">E-commerce UI</span>
+                            <h3 class="text-2xl font-bold">Online Store Front</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Mobile-first layout with smooth component interactions and clean component architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Figma</span>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 border-t border-slate-200 dark:border-slate-800 mb-12">
+            <div class="max-w-3xl mx-auto rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 text-center space-y-6">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Let's Work Together!</h2>
+                    <p class="text-blue-100 text-sm sm:text-base max-w-lg mx-auto">
+                        I am currently open to junior front-end positions, internships, and freelance projects in Bishkek or remotely.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
+                        <a href="tel:+996999425453" class="p-4 rounded-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-blue-200 block">Phone / Whatsapp</span>
+                                <span class="font-semibold text-sm">+996 999 42 54 53</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/iturdiev612-gif" target="_blank" class="p-4 rounded-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-blue-200 block">GitHub Profile</span>
+                                <span class="font-semibold text-sm">iturdiev612-gif</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-slate-900 text-xs text-slate-500 dark:text-slate-400">
+        <div class="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 Islam Turdiev. Junior Front-end Developer.
+            </div>
+            <div class="flex items-center gap-6">
+                <span><i class="fa-solid fa-location-dot text-blue-500"></i> Bishkek, Kyrgyzstan</span>
+                <a href="https://github.com/iturdiev612-gif" target="_blank" class="hover:text-blue-600 transition-colors">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="./script.js"></script>
+</body>
